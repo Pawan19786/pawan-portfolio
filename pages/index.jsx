@@ -20,8 +20,15 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            Empowering Ideas <br /> Into{" "}
+            <motion.span
+              variants={fadeIn("up", 0.5)}
+              initial="hidden"
+              animate="show"
+              className="text-accent drop-shadow-lg"
+            >
+              Digital Reality
+            </motion.span>
           </motion.h1>
 
           {/* subtitle */}
@@ -32,10 +39,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            I am a BSc-IT student and aspiring frontend developer who enjoys
+            building modern, responsive, and user-friendly web interfaces.
           </motion.p>
 
           {/* btn */}

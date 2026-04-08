@@ -13,48 +13,24 @@ const workSlides = {
     {
       images: [
         {
-          title: "title",
-          path: "/thumb1.jpg",
-          link: "http://example.com",
+          title: "Ebookstore",
+          path: "/ebookstore.png",
+          link: "https://github.com/PawanSahu/ebookstore",
         },
         {
-          title: "title",
-          path: "/thumb2.jpg",
-          link: "http://example.com",
+          title: "Restaurant Booking",
+          path: "/restaurant.png",
+          link: "https://github.com/PawanSahu/restaurant-booking",
         },
         {
-          title: "title",
+          title: "Project 3",
           path: "/thumb3.jpg",
-          link: "http://example.com",
+          link: "#",
         },
         {
-          title: "title",
+          title: "Project 4",
           path: "/thumb4.jpg",
-          link: "http://example.com",
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: "title",
-          path: "/thumb4.jpg",
-          link: "http://example.com",
-        },
-        {
-          title: "title",
-          path: "/thumb1.jpg",
-          link: "http://example.com",
-        },
-        {
-          title: "title",
-          path: "/thumb2.jpg",
-          link: "http://example.com",
-        },
-        {
-          title: "title",
-          path: "/thumb3.jpg",
-          link: "http://example.com",
+          link: "#",
         },
       ],
     },
@@ -79,40 +55,38 @@ const WorkSlider = () => {
                 className="relative rounded-lg overflow-hidden flex items-center justify-center group"
                 key={imageI}
               >
-                <div className="flex items-center justify-center relative overflow-hidden group">
+                <div className="flex items-center justify-center relative overflow-hidden group w-full h-full">
                   {/* image */}
                   <Image
                     src={image.path}
                     alt={image.title}
                     width={500}
                     height={300}
+                    className="object-cover"
                   />
 
-                  {/* overlay gradient */}
+                  {/* overlay gradient with glassmorphism */}
                   <div
-                    className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"
+                    className="absolute inset-0 bg-black/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-center justify-center"
                     aria-hidden
-                  />
-
-                  {/* title */}
-                  <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                    <Link
-                      href={image.link}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]"
-                    >
-                      {/* title part 1 */}
-                      <div className="delay-100">LIVE</div>
-                      {/* title part 2 */}
-                      <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                        PROJECT
-                      </div>
-                      {/* icon */}
-                      <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                        <BsArrowRight aria-hidden />
-                      </div>
-                    </Link>
+                  >
+                    <div className="text-white text-center">
+                       <div className="text-xl font-bold mb-2 translate-y-10 group-hover:translate-y-0 transition-all duration-500">{image.title}</div>
+                       <Link
+                        href={image.link}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="flex items-center gap-x-2 text-[13px] tracking-[0.2em] bg-accent/80 px-4 py-2 rounded-full translate-y-10 group-hover:translate-y-0 transition-all duration-500 delay-100"
+                      >
+                        <div className="delay-100">LIVE</div>
+                        <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                          PROJECT
+                        </div>
+                        <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                          <BsArrowRight aria-hidden />
+                        </div>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

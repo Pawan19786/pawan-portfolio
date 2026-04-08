@@ -7,38 +7,29 @@ import {
   RiDribbbleLine,
   RiGithubLine,
   RiPinterestLine,
+  RiLinkedinLine,
 } from "react-icons/ri";
 
 export const socialData = [
   {
-    name: "YouTube",
-    link: "https://youtube.com",
-    Icon: RiYoutubeLine,
+    name: "Github",
+    link: "https://github.com/Pawan19786",
+    Icon: RiGithubLine,
   },
   {
     name: "Instagram",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/pawansahu7075",
     Icon: RiInstagramLine,
   },
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: "https://facebook.com/PawanSahu",
     Icon: RiFacebookLine,
   },
   {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
-  },
-  {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
-  },
-  {
-    name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
-    Icon: RiGithubLine,
+    name: "Linkedin",
+    link: "https://www.linkedin.com/in/pawan-sahu-b07187296?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+    Icon: RiLinkedinLine,
   },
 ];
 
@@ -46,7 +37,7 @@ const Socials = () => {
   return (
     <div className="flex items-center gap-x-5 text-lg">
       {socialData.map((social, i) => (
-        <Link
+        <a
           key={i}
           title={social.name}
           href={social.link}
@@ -60,7 +51,7 @@ const Socials = () => {
         >
           <social.Icon aria-hidden />
           <span className="sr-only">{social.name}</span>
-        </Link>
+        </a>
       ))}
     </div>
   );

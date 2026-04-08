@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { Particles } from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 const ParticlesContainer = () => {
   // init
   const particlesInit = useCallback(async (engine) => {
-    await loadFull(engine);
+    await loadSlim(engine);
   }, []);
 
   const particlesLoaded = useCallback(async () => {}, []);
@@ -27,22 +27,23 @@ const ParticlesContainer = () => {
         interactivity: {
           events: {
             onClick: {
-              enable: false,
+              enable: true,
               mode: "push",
             },
             onHover: {
               enable: true,
-              mode: "repulse",
+              mode: "attract",
             },
             resize: true,
           },
           modes: {
             push: {
-              quantity: 90,
+              quantity: 4,
             },
-            repulse: {
+            attract: {
               distance: 200,
               duration: 0.4,
+              factor: 5,
             },
           },
         },
@@ -54,19 +55,16 @@ const ParticlesContainer = () => {
             color: "#f5d393",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.3,
             width: 1,
-          },
-          collisions: {
-            enable: true,
           },
           move: {
             direction: "none",
             enable: true,
             outMode: {
-              default: "bounce",
+              default: "out",
             },
-            random: false,
+            random: true,
             speed: 1,
             straight: false,
           },
@@ -75,19 +73,16 @@ const ParticlesContainer = () => {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 100,
           },
           opacity: {
-            value: 0.5,
+            value: { min: 0.1, max: 0.5 },
           },
           shape: {
             type: "circle",
           },
           size: {
-            value: {
-              min: 1,
-              max: 5,
-            },
+            value: { min: 1, max: 4 },
           },
         },
         detectRetina: true,
