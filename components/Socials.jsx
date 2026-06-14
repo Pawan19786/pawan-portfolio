@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 import {
   RiYoutubeLine,
@@ -57,4 +58,4 @@ const Socials = () => {
   );
 };
 
-export default Socials;
+export default React.memo(Socials);
