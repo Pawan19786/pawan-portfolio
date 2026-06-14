@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 const Bulb = () => {
   return (
@@ -14,4 +15,4 @@ const Bulb = () => {
   );
 };
 
-export default Bulb;
+export default React.memo(Bulb);
