@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-import WorkSlider from "../../components/WorkSlider";
+
+const WorkSlider = dynamic(() => import("../../components/WorkSlider"), {
+  ssr: false,
+  loading: () => <div className="h-[280px] sm:h-[480px] flex items-center justify-center text-accent/60">Loading Work...</div>
+});
+
 import { fadeIn } from "../../variants";
 
 const Work = () => {
