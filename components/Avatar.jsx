@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 const Avatar = () => {
   return (
@@ -15,4 +16,4 @@ const Avatar = () => {
   );
 };
 
-export default Avatar;
+export default React.memo(Avatar);
