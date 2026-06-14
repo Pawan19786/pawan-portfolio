@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 const Circles = () => {
   return (
@@ -14,4 +15,4 @@ const Circles = () => {
   );
 };
 
-export default Circles;
+export default React.memo(Circles);
