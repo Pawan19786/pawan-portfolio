@@ -1,8 +1,14 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
 import Bulb from "../../components/Bulb";
 import Circles from "../../components/Circles";
-import ServiceSlider from "../../components/ServiceSlider";
+
+const ServiceSlider = dynamic(() => import("../../components/ServiceSlider"), {
+  ssr: false,
+  loading: () => <div className="h-[240px] sm:h-[340px] flex items-center justify-center text-accent/60">Loading Services...</div>
+});
+
 import { fadeIn } from "../../variants";
 
 export const serviceData = [];
