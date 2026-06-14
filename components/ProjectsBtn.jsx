@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 import { HiArrowRight } from "react-icons/hi2";
 
@@ -26,4 +27,4 @@ const ProjectsBtn = () => {
   );
 };
 
-export default ProjectsBtn;
+export default React.memo(ProjectsBtn);
