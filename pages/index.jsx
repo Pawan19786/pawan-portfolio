@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import Image from "next/image";
 
-import ParticlesContainer from "../components/ParticlesContainer";
+const ParticlesContainer = dynamic(() => import("../components/ParticlesContainer"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-transparent" />
+});
+
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
 
@@ -61,11 +67,15 @@ const Home = () => {
       {/* image */}
       <div className="w-[1280px] h-full absolute right-0 bottom-0">
         {/* bg img */}
-        <div
-          role="img"
-          className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"
-          aria-hidden
-        />
+        <div className="hidden xl:block w-full h-full absolute mix-blend-color-dodge translate-z-0 select-none pointer-events-none">
+          <Image
+            src="/bg-explosion.png"
+            alt="Background explosion"
+            fill
+            priority
+            className="object-cover object-right"
+          />
+        </div>
 
         {/* particles */}
         <ParticlesContainer />
