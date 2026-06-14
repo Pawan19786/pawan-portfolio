@@ -45,8 +45,7 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            I am a BSc-IT student and aspiring frontend developer who enjoys
-            building modern, responsive, and user-friendly web interfaces.
+            Frontend Developer focused on creating modern, responsive, and high-performance web applications with clean code and exceptional user experiences.
           </motion.p>
 
           {/* btn */}
