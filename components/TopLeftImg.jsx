@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from "react";
 
 const TopLeftImg = () => {
   return (
@@ -14,4 +15,4 @@ const TopLeftImg = () => {
   );
 };
 
-export default TopLeftImg;
+export default React.memo(TopLeftImg);
