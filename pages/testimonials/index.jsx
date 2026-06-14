@@ -1,6 +1,11 @@
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 
-import TestimonialSlider from "../../components/TestimonialSlider";
+const TestimonialSlider = dynamic(() => import("../../components/TestimonialSlider"), {
+  ssr: false,
+  loading: () => <div className="h-[400px] flex items-center justify-center text-accent/60">Loading Testimonials...</div>
+});
+
 import { fadeIn } from "../../variants";
 
 const Testimonials = () => {
